@@ -81,47 +81,16 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
 
 %debug page outer frames
 %\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -135,19 +104,12 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Richie B. Thomas} \\[7.5pt]
 \href{https://github.com/richiebthomas}{\raisebox{-0.05\height}\faGithub\ richiebthomas} \ $|$ \ 
-\href{https://linkedin.com/in/richie-thomas-3b6757267}{\raisebox{-0.05\height}\faLinkedin\ richie-thomas-3b6757267} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:richiebt2004@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ richiebt2004@gmail.com} \ $|$ \ 
-\href{tel:+919920616539}{\raisebox{-0.05\height}\faMobile \ +91-9920616539} \\
+\href{https://www.linkedin.com/in/richie-thomas-3b6757267/}{\raisebox{-0.05\height}\faLinkedin\ richie-thomas} \ $|$ \ 
+\href{mailto:richiebt2004@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ richiebt2004@gmail.com} \ $|$ \ 
+\href{tel:+919920616539}{\raisebox{-0.05\height}\faMobile\ +91-9920616539} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -155,28 +117,73 @@
 %----------------------------------------------------------------------------------------
 
 %Interests/ Keywords/ Summary
-\section{Summary}
-This CV is automatically generated and deployed using the \href{https://github.com/jitinnair1/autoCV}{autoCV} template along with GitHub Actions such that a new version of the CV is compiled, published and ready for use when the cv.tex file is updated. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+\section{Professional Summary}
+Versatile and self-driven developer with expertise in full-stack and cross-platform mobile development. Demonstrated success in building scalable apps, improving user engagement and streamlining workflows with effective tech solutions. Blends strong technical acumen with leadership experience in fast-paced, collaborative environments.
+
+% Skills
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Programming Languages &  Java, Dart, JavaScript, PHP, SQL, Python \\
+Web Technologies &  MERN Stack (MongoDB, Express, React, Node.js), Laravel, HTML/CSS \\
+Mobile Development &  Flutter, Firebase, Android SDK \\
+Database Systems &  MySQL, Firebase Firestore, MongoDB \\
+Tools \& Practices &  Git, RESTful APIs, State Management, Responsive UI Design, System Design, Architecture \\
+\end{tabularx}
 
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+% GetFly Technologies
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Flutter Developer Intern} & \textbf{Jun 2025 -- Jul 2025} \\
+\textit{GetFly Technologies} & \textit{Mumbai} \\
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Developed an Android ERP app using Flutter in a 16-member cross-functional team, focusing on student and faculty modules to digitize campus operations
+        \item Integrated 8+ REST APIs with Dio for efficient data fetching, implementing authentication and secure local storage
+    \end{itemize}
+}
+\end{tabularx}
+% Bayside Sports
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Full Stack Web Developer Intern} & \textbf{Mar 2025 -- Jun 2025} \\
+\textit{Bayside Sports India Pvt. Ltd.} & \textit{Mumbai} \\
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Built React/Laravel sales portal with Inertia SSR (SEO-optimized) and admin dashboard, cutting service booking time by a significant amount(35\%)
+        \item Implemented form analytics to help sales team prioritize leads, boosting conversions
+    \end{itemize}
+}
+\end{tabularx}
+% Fr. C. Rodrigues Institute
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Full Stack Web Developer Intern} & \textbf{Mar 2024 -- Apr 2025} \\
+\textit{Fr. C. Rodrigues Institute of Technology} & \textit{Navi Mumbai} \\
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Built and maintained college's IMS Portal used by 1,000+ students and staff
+        \item Added new features based on feedback, boosting user satisfaction by 20\%
+        \item Worked with a team of 4 developers; fixed 50+ bugs improving reliability
+    \end{itemize}
+}
+\end{tabularx}
 
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{Investment Platform (MERN Stack)} & \hfill \href{https://github.com/richiebthomas}{\faGithub} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed comprehensive stock, bond, and insurance management system featuring Gemini AI integration and automated trading capabilities} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{LMS App (Flutter, Firebase)} & \hfill \href{https://github.com/richiebthomas}{\faGithub} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Classroom management solution enabling teachers to upload content and students to submit assignments with real-time notifications} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Inventory Management System (Java, MySQL)} & \hfill \href{https://github.com/richiebthomas}{\faGithub} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Automated reporting system reducing manual workload by 40\% with stock tracking and predictive restocking alerts} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -184,31 +191,30 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+2022 - 2026 & Bachelor of Engineering - Information Technology \\
+& \textbf{Fr. C. Rodrigues Institute of Technology}, Vashi, Navi Mumbai \hfill \normalsize (CGPA: 7.42/10.0) \\[5pt]
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+2021 - 2022 & Higher Secondary Certificate \\
+& \textbf{Narayana Junior College}, Kalyan, Thane \hfill (Score: 79.00\%) \\[5pt]
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+2019 - 2020 & Secondary School Certificate \\
+& \textbf{Lourdes High School}, Kalyan, Thane \hfill (Score: 89.50\%) \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	PUBLICATIONS
+%	EXTRACURRICULAR
 %----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+\section{Extracurricular}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Computer Society of India (CSI)} | Head of Documentation & \hfill Jul 2024 - Mar 2025 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Led documentation team for 10+ technical events with 500+ participants
+        \item[--] Created standardized certification templates and distribution system
+    \end{itemize}
+\end{minipage}
+}
 \end{tabularx}
 
 \vfill
