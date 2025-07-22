@@ -1,230 +1,210 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
 %----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
+%    MODERN ATS-FRIENDLY RESUME (COMPACT WITH IMPROVED SPACING)
 %----------------------------------------------------------------------------------------
 
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[10pt,a4paper]{article}
 
 %----------------------------------------------------------------------------------------
-%	FONT
+%    PACKAGES
 %----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
-\usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
-\usepackage{tabularx}
-
-%for lists within experience section
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.35in]{geometry} % Slightly increased margin for better breathing room
+\usepackage{parskip}
+\setlength{\parskip}{2pt plus 1pt} % Slightly reduced paragraph spacing
+\usepackage{array}
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-
-%for social icons
+\setlist[itemize]{leftmargin=0.45in, label=--, topsep=2pt, itemsep=0pt, partopsep=0pt, parsep=0pt} % Improved list spacing
+\usepackage{xcolor}
+\usepackage{hyperref}
 \usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
+\usepackage{titlesec}
+\usepackage{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
+%    COLORS & FORMATTING
+%----------------------------------------------------------------------------------------
+\definecolor{primary}{RGB}{0, 102, 204}
+\definecolor{text}{RGB}{51, 51, 51}
+\definecolor{light}{RGB}{51, 51, 51}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    filecolor=primary,
+    pdfborder={0 0 0}
+}
+
+% Remove page numbering
+\pagestyle{empty}
+
+% Section formatting with improved spacing
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\vspace{-1.1em}\textcolor{primary}{\hrule height 1pt}\vspace{0.4em}]
+\titlespacing{\section}{0pt}{0.8em}{0.2em}
+
+% Custom commands with refined spacing
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textcolor{light}{\small\textbf{#2}} \\
+    \textit{\small#3} & \textcolor{light}{\small#4} \\
+  \end{tabular*}\vspace{-5pt}
+}
+
+
+
+\newcommand{\resumeProject}[3]{
+  \vspace{-1pt}
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+  \end{tabular*}
+  \noindent
+  \small{#3}
+  \vspace{0.3em}
+}
+
+
+%----------------------------------------------------------------------------------------
+%    DOCUMENT START
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+%----------------------------------------------------------------------------------------
+%    HEADER
+%----------------------------------------------------------------------------------------
+\begin{center}
+    {\LARGE\bfseries\color{primary} Richie B. Thomas}
+    
+    \vspace{0.3em}
+    
+    \href{mailto:richiebt2004@gmail.com}{\faEnvelope\ richiebt2004@gmail.com} $\bullet$
+    \href{tel:+919920616539}{\faMobile\ +91-9920616539} $\bullet$
+    \href{https://www.linkedin.com/in/richie-thomas/}{\faLinkedin\ richie-thomas} $\bullet$
+    \href{https://github.com/richiebthomas}{\faGithub\ richiebthomas}
+\end{center}
+
+\vspace{0.2em}
 
 %----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Richie B. Thomas} \\[7.5pt]
-\href{https://github.com/richiebthomas}{\raisebox{-0.05\height}\faGithub\ richiebthomas} \ $|$ \ 
-\href{https://www.linkedin.com/in/richie-thomas/}{\raisebox{-0.05\height}\faLinkedin\ richie-thomas} \ $|$ \ 
-\href{mailto:richiebt2004@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ richiebt2004@gmail.com} \ $|$ \ 
-\href{tel:+919920616539}{\raisebox{-0.05\height}\faMobile\ +91-9920616539} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-\section{Professional Summary}
-Proactive IT student with 1.5+ years of hands-on experience in full-stack and mobile development. Proven ability to deliver impactful solutions by building scalable apps, improving user engagement and streamlining workflows with effective tech solutions. Blends strong technical acumen with leadership experience in fast-paced, collaborative environments.
-
-% Skills
-\section{Technical Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming Languages &  Java, Dart, JavaScript, PHP, SQL, Python \\
-Web Technologies &  MERN Stack (MongoDB, Express, React, Node.js), Laravel, HTML/CSS \\
-Mobile Development &  Flutter, Firebase, Android SDK \\
-Database Systems &  MySQL, Firebase Firestore, MongoDB \\
-Tools \& Practices &  Git, RESTful APIs, Responsive UI Design, System Design, Architecture \\
-\end{tabularx}
-
-%Experience
-\section{Work Experience}
-
-% GetFly Technologies
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Flutter Developer Intern} & \textbf{Jun 2025 -- Jul 2025} \\
-\textit{GetFly Technologies} & \textit{Mumbai} \\
-\multicolumn{2}{@{}X@{}}{
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Developed an Android ERP app using Flutter in a 16-member cross-functional team, focusing on student and faculty modules to digitize campus operations
-        \item Integrated 8+ REST APIs with Dio for efficient data fetching, implementing authentication and secure local storage
-    \end{itemize}
-}
-\end{tabularx}
-
-% Bayside Sports
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Full Stack Web Developer Intern} & \textbf{Mar 2025 -- Jun 2025} \\
-\textit{Bayside Sports India Pvt. Ltd.} & \textit{Mumbai} \\
-\multicolumn{2}{@{}X@{}}{
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Engineered a full-stack sales portal using React and Laravel with Inertia.js for Server-Side Rendering (SSR), boosting SEO performance and reducing average customer booking time by 35\%
-        \item Implemented form analytics to help sales team prioritize leads, boosting conversions
-    \end{itemize}
-}
-\end{tabularx}
-
-% Fr. C. Rodrigues Institute
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Full Stack Web Developer Intern} & \textbf{Mar 2024 -- Apr 2025} \\
-\textit{Fr. C. Rodrigues Institute of Technology} & \textit{Navi Mumbai} \\
-\multicolumn{2}{@{}X@{}}{
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Development and maintenance of the college's Information Management System (IMS) portal, a critical tool serving over 1,000 students and staff for academic and administrative tasks.
-        \item Proactively gathered user feedback to design and implement high-demand features, such as a new data modules and export features, resulting in a 20\% increase in satisfaction.
-        
-    \end{itemize}
-}
-\end{tabularx}
-
-%Projects
-\section{Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Investment Platform (MERN Stack)} & \hfill \href{https://github.com/richiebthomas/FinalSubmissionCodeCrafter}{Link \faGithub} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Developed comprehensive stock, bond, and insurance management system featuring Gemini AI integration and automated trading capabilities} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{LMS App (Flutter, Firebase)} & \hfill \href{https://github.com/richiebthomas/flutter_LMS_app}{Link \faGithub} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Classroom management solution enabling teachers to upload content and students to submit assignments } \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Event Management Platform (Laravel, MySQL)} & \hfill \href{https://github.com/richiebthomas/yetamax}{Link \faGithub} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Built a system for users to manage events, register participants, and track details.} \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Inventory Management System (Java, MySQL)} & \hfill \href{https://github.com/richiebthomas/sellsage}{Link \faGithub} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Automated reporting system reducing manual workload by 40\% with stock tracking and predictive restocking alerts} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
+%    EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2022 - 2026 & Bachelor of Engineering - Information Technology \\
-& \textbf{Fr. C. Rodrigues Institute of Technology}, Vashi, Navi Mumbai \hfill \normalsize (CGPA: 7.42/10.0) \\[5pt]
 
-2021 - 2022 & Higher Secondary Certificate \\
-& \textbf{Narayana Junior College}, Kalyan, Thane \hfill (Score: 79.00\%) \\[5pt]
+\resumeSubheading
+{Bachelor of Engineering - Information Technology}{2022 -- 2026}
+{Fr. C. Rodrigues Institute of Technology}{CGPA: 7.42/10.0}
 
-2019 - 2020 & Secondary School Certificate \\
-& \textbf{Lourdes High School}, Kalyan, Thane \hfill (Score: 89.50\%) \\
-\end{tabularx}
+\vspace{0.1em}
 
 %----------------------------------------------------------------------------------------
-%	EXTRACURRICULAR
+%   EXPERIENCE
 %----------------------------------------------------------------------------------------
-\section{Extracurricular}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Computer Society of India (CSI)} | Head of Documentation & \hfill Jul 2024 - Mar 2025 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Led documentation team for 10+ technical events with 500+ participants
-        \item[--] Created standardized certification templates and distribution system
-    \end{itemize}
-\end{minipage}
-}
-\end{tabularx}
+\section{Professional Experience}
 
+\resumeSubheading
+{Research Intern}{\textbf{July 2025 -- Present}}
+{Indian Institute of Science Education and Research (IISER), Mohali, India}{}
+\begin{itemize}
+    \resumeItem{As part of a 4-member interdisciplinary team, responsible for designing and deploying a Sparse Neural Network Accelerator on the PYNQ-Z2 FPGA platform for real-time digit recognition using the MNIST dataset}
+    \resumeItem{Focused on hardware-software co-design, optimization, and performance benchmarking for edge AI applications}
+\end{itemize}
+
+\vspace{0.1em}
+
+\resumeSubheading
+{Android Developer Intern}{\textbf{June 2025 -- July 2025}}
+{GetFly Technologies, Sion}{}
+\begin{itemize}
+    \resumeItem{Developed Android ERP application using Flutter framework in 16-member cross-functional team, focusing on student and faculty modules to digitize campus operations}
+    \resumeItem{Integrated 8+ REST APIs using Dio package for efficient data fetching, implementing secure authentication and local storage solutions}
+    \resumeItem{Collaborated with UI/UX designers and backend developers to ensure seamless user experience across student and faculty workflows}
+\end{itemize}
+
+\vspace{0.1em}
+
+\resumeSubheading
+{Full Stack Web Developer Intern}{\textbf{March 2025 -- June 2025}}
+{Bayside Sports India Pvt. Ltd., Bandra}{}
+\begin{itemize}
+    \resumeItem{Engineered full-stack sales portal using React.js and Laravel with Inertia.js for Server-Side Rendering, improving SEO performance}
+    \resumeItem{Reduced average customer booking time by 35\% through optimized user interface and streamlined booking workflow}
+    \resumeItem{Implemented comprehensive form analytics system enabling sales team to prioritize high-quality leads and boost conversion rates}
+\end{itemize}
+
+\vspace{0.1em}
+
+\resumeSubheading
+{Full Stack Web Developer Intern}{\textbf{March 2024 -- April 2025}}
+{Fr. C. Rodrigues Institute of Technology, Vashi}{}
+\begin{itemize}
+    \resumeItem{Developed and maintained college Information Management System (IMS) portal serving 1,000+ students and faculty members}
+    \resumeItem{Designed and implemented high-demand features including data export modules based on user feedback analysis}
+    \resumeItem{Achieved 20\% increase in user satisfaction through proactive feature development and system optimization}
+\end{itemize}
+
+\vspace{0.1em}
+
+%----------------------------------------------------------------------------------------
+%    PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Key Projects}
+
+\resumeProject
+{Investment Platform - MERN Stack}
+{\href{https://github.com/richiebthomas/FinalSubmissionCodeCrafter}{\faGithub\ GitHub}}
+{Comprehensive financial management system featuring stock, bond, and insurance management with Gemini AI integration and automated trading capabilities. Built using MongoDB, Express.js, React.js, and Node.js.}
+
+\resumeProject
+{Learning Management System - Flutter \& Firebase}
+{\href{https://github.com/richiebthomas/flutter_LMS_app}{\faGithub\ GitHub}}
+{Mobile classroom management solution enabling teachers to upload educational content and students to submit assignments with real-time synchronization using Firebase backend.}
+
+
+\resumeProject
+{Event Management Platform - Laravel \& MySQL}
+{\href{https://github.com/richiebthomas/yetamax}{\faGithub\ GitHub}}
+{Full-featured event management system enabling users to create events, manage participant registration, and track event details with automated notifications.}
+
+\vspace{0.1em}
+
+%----------------------------------------------------------------------------------------
+%    TECHNICAL SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical Skills}
+\begin{tabular*}{\textwidth}{@{}p{0.25\textwidth}@{\hspace{0.02\textwidth}}p{0.73\textwidth}@{}}
+\textbf{Programming:} & Java, JavaScript, Dart, PHP, Python, SQL \\[2pt]
+\textbf{Frontend:} & React.js, Flutter, HTML5, CSS3, Responsive Design \\[2pt]
+\textbf{Backend:} & Node.js, Express.js, Laravel, RESTful APIs \\[2pt]
+\textbf{Databases:} & MongoDB, MySQL, Firebase Firestore \\[2pt]
+\textbf{Tools \& Technologies:} & Git, Firebase, Android SDK, Inertia.js, Dio, Server-Side Rendering \\[2pt]
+\textbf{Development Practices:} & Agile, System Design, API Integration, Authentication, Data Analytics \\
+\end{tabular*}
+
+\vspace{0.1em}
+
+%----------------------------------------------------------------------------------------
+%    LEADERSHIP & EXTRACURRICULAR
+%----------------------------------------------------------------------------------------
+\section{Leadership \& Activities}
+
+\resumeSubheading
+{Head of Documentation}{\textbf{July 2024 -- March 2025}}
+{Computer Society of India (CSI)}{}
+\begin{itemize}
+    \resumeItem{Led documentation team for 10+ technical events with 500+ participants, ensuring comprehensive event coverage}
+    \resumeItem{Created standardized certification templates and automated distribution system, improving operational efficiency}
+    \resumeItem{Collaborated with event organizers to maintain detailed records and produce post-event reports}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%    FOOTER
+%----------------------------------------------------------------------------------------
 \vfill
-\center{\footnotesize Last updated: \today}
+\begin{center}
+    \textcolor{light}{\footnotesize Last updated: \today}
+\end{center}
 
 \end{document}
