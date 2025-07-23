@@ -10,7 +10,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[margin=0.35in]{geometry} % Slightly increased margin for better breathing room
+\usepackage[margin=0.3in]{geometry} % Slightly increased margin for better breathing room
 \usepackage{parskip}
 \setlength{\parskip}{2pt plus 1pt} % Slightly reduced paragraph spacing
 \usepackage{array}
@@ -54,8 +54,6 @@
   \end{tabular*}\vspace{-5pt}
 }
 
-
-
 \newcommand{\resumeProject}[3]{
   \vspace{-1pt}
   \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -65,7 +63,6 @@
   \small{#3}
   \vspace{0.3em}
 }
-
 
 %----------------------------------------------------------------------------------------
 %    DOCUMENT START
@@ -105,7 +102,7 @@
 \section{Professional Experience}
 
 \resumeSubheading
-{Research Intern}{\textbf{July 2025 -- Present}}
+{Research Intern}{July 2025 -- Present}
 {Indian Institute of Science Education and Research (IISER), Mohali, India}{}
 \begin{itemize}
     \resumeItem{As part of a 4-member interdisciplinary team, responsible for designing and deploying a Sparse Neural Network Accelerator on the PYNQ-Z2 FPGA platform for real-time digit recognition using the MNIST dataset}
@@ -115,18 +112,28 @@
 \vspace{0.1em}
 
 \resumeSubheading
-{Android Developer Intern}{\textbf{June 2025 -- July 2025}}
-{GetFly Technologies, Sion}{}
+{Tech Intern}{July 2025 -- July 2025}
+{Sports Mentoring Infusion, Mumbai}{}
 \begin{itemize}
-    \resumeItem{Developed Android ERP application using Flutter framework in 16-member cross-functional team, focusing on student and faculty modules to digitize campus operations}
-    \resumeItem{Integrated 8+ REST APIs using Dio package for efficient data fetching, implementing secure authentication and local storage solutions}
-    \resumeItem{Collaborated with UI/UX designers and backend developers to ensure seamless user experience across student and faculty workflows}
+    \resumeItem{Architected and developed cross-platform mobile application using React Native with Node.js backend and PostgreSQL database}
+    \resumeItem{Implemented habit tracking system with push notifications and gamification elements, increasing user engagement by 65\%}
+    \resumeItem{Built analytics dashboard for coaches enabling data-driven mentoring decisions}
 \end{itemize}
 
 \vspace{0.1em}
 
 \resumeSubheading
-{Full Stack Web Developer Intern}{\textbf{March 2025 -- June 2025}}
+{Android Developer Intern}{June 2025 -- July 2025}
+{GetFly Technologies, Sion}{}
+\begin{itemize}
+    \resumeItem{Developed ERP application using Flutter framework, digitizing campus operations for 1,000+ students across 8 modules including attendance and grading systems}
+    \resumeItem{Integrated 8+ REST APIs using Dio package for efficient data fetching, implementing secure authentication and local storage solutions}
+\end{itemize}
+
+\vspace{0.1em}
+
+\resumeSubheading
+{Full Stack Web Developer Intern}{March 2025 -- June 2025}
 {Bayside Sports India Pvt. Ltd., Bandra}{}
 \begin{itemize}
     \resumeItem{Engineered full-stack sales portal using React.js and Laravel with Inertia.js for Server-Side Rendering, improving SEO performance}
@@ -137,11 +144,11 @@
 \vspace{0.1em}
 
 \resumeSubheading
-{Full Stack Web Developer Intern}{\textbf{March 2024 -- April 2025}}
+{Full Stack Web Developer Intern}{March 2024 -- April 2025}
 {Fr. C. Rodrigues Institute of Technology, Vashi}{}
 \begin{itemize}
-    \resumeItem{Developed and maintained college Information Management System (IMS) portal serving 1,000+ students and faculty members}
-    \resumeItem{Designed and implemented high-demand features including data export modules based on user feedback analysis}
+    \resumeItem{Designed and maintained college Information Management System serving 1,000+ users, implementing role-based access control and audit logging}
+    \resumeItem{Developed data export module with PDF/Excel generation, reducing administrative workload by 10 hours/week}
     \resumeItem{Achieved 20\% increase in user satisfaction through proactive feature development and system optimization}
 \end{itemize}
 
@@ -155,18 +162,17 @@
 \resumeProject
 {Investment Platform - MERN Stack}
 {\href{https://github.com/richiebthomas/FinalSubmissionCodeCrafter}{\faGithub\ GitHub}}
-{Comprehensive financial management system featuring stock, bond, and insurance management with Gemini AI integration and automated trading capabilities. Built using MongoDB, Express.js, React.js, and Node.js.}
+{Full-stack financial platform featuring portfolio management, automated trading, and Gemini AI integration. Implemented real-time data streaming using WebSockets, JWT authentication, and responsive dashboard with Chart.js visualization. Tech stack: MongoDB, Express.js, React.js, Node.js, and Alpaca API.}
 
 \resumeProject
 {Learning Management System - Flutter \& Firebase}
 {\href{https://github.com/richiebthomas/flutter_LMS_app}{\faGithub\ GitHub}}
-{Mobile classroom management solution enabling teachers to upload educational content and students to submit assignments with real-time synchronization using Firebase backend.}
-
+{Mobile education platform enabling content delivery, assignment submission, and grade tracking. Implemented Firebase Authentication, Cloud Firestore for real-time updates, and PDF viewer integration.}
 
 \resumeProject
 {Event Management Platform - Laravel \& MySQL}
 {\href{https://github.com/richiebthomas/yetamax}{\faGithub\ GitHub}}
-{Full-featured event management system enabling users to create events, manage participant registration, and track event details with automated notifications.}
+{Full-featured event management system enabling users to create events, manage participant registration, and track event details}
 
 \vspace{0.1em}
 
@@ -175,12 +181,13 @@
 %----------------------------------------------------------------------------------------
 \section{Technical Skills}
 \begin{tabular*}{\textwidth}{@{}p{0.25\textwidth}@{\hspace{0.02\textwidth}}p{0.73\textwidth}@{}}
-\textbf{Programming:} & Java, JavaScript, Dart, PHP, Python, SQL \\[2pt]
-\textbf{Frontend:} & React.js, Flutter, HTML5, CSS3, Responsive Design \\[2pt]
-\textbf{Backend:} & Node.js, Express.js, Laravel, RESTful APIs \\[2pt]
-\textbf{Databases:} & MongoDB, MySQL, Firebase Firestore \\[2pt]
-\textbf{Tools \& Technologies:} & Git, Firebase, Android SDK, Inertia.js, Dio, Server-Side Rendering \\[2pt]
-\textbf{Development Practices:} & Agile, System Design, API Integration, Authentication, Data Analytics \\
+Programming: & Java, JavaScript (ES6+), Dart, PHP, Python, SQL, TypeScript \\[2pt]
+Frontend: & React.js, Flutter, React Native, HTML5, CSS3, Responsive Design, Material UI, Chart.js \\[2pt]
+Backend: & Node.js, Express.js, Laravel, RESTful APIs, GraphQL, WebSockets, Server-Side Rendering \\[2pt]
+Databases: & MongoDB, PostgreSQL, MySQL, Firebase Firestore, ORM (Eloquent, Mongoose) \\[2pt]
+DevOps \& Tools: & Git, Docker, CI/CD, Firebase, Android SDK, Postman, Jira, Figma \\[2pt]
+Cloud \& Deployment: & AWS EC2, Heroku, Netlify, Vercel, DigitalOcean \\[2pt]
+Methodologies: & Agile Development, Scrum, Test-Driven Development, System Design, Microservices \\
 \end{tabular*}
 
 \vspace{0.1em}
@@ -191,12 +198,12 @@
 \section{Leadership \& Activities}
 
 \resumeSubheading
-{Head of Documentation}{\textbf{July 2024 -- March 2025}}
+{Head of Documentation}{July 2024 -- March 2025}
 {Computer Society of India (CSI)}{}
 \begin{itemize}
-    \resumeItem{Led documentation team for 10+ technical events with 500+ participants, ensuring comprehensive event coverage}
-    \resumeItem{Created standardized certification templates and automated distribution system, improving operational efficiency}
-    \resumeItem{Collaborated with event organizers to maintain detailed records and produce post-event reports}
+    \resumeItem{Managed documentation for 10+ technical events with 500+ participants, creating standardized templates and automated certification system in python}
+    \resumeItem{Improved operational efficiency by 40\% through implementation of document management workflow}
+   
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
