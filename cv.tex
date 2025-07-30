@@ -2,7 +2,7 @@
 %    MODERN ATS-FRIENDLY RESUME (COMPACT WITH IMPROVED SPACING)
 %----------------------------------------------------------------------------------------
 
-\documentclass[10pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 %----------------------------------------------------------------------------------------
 %    PACKAGES
@@ -15,7 +15,7 @@
 \setlength{\parskip}{2pt plus 1pt} % Slightly reduced paragraph spacing
 \usepackage{array}
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=0.45in, label=--, topsep=2pt, itemsep=0pt, partopsep=0pt, parsep=0pt} % Improved list spacing
+\setlist[itemize]{leftmargin=0.45in, label=\textbullet, topsep=2pt, itemsep=0pt, partopsep=0pt, parsep=0pt} % Improved list spacing
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fontawesome5}
@@ -27,7 +27,7 @@
 %----------------------------------------------------------------------------------------
 \definecolor{primary}{RGB}{0, 102, 204}
 \definecolor{text}{RGB}{51, 51, 51}
-\definecolor{light}{RGB}{51, 51, 51}
+\definecolor{light}{RGB}{0, 102, 204}
 
 \hypersetup{
     colorlinks=true,
@@ -84,7 +84,7 @@
     \href{tel:+919920616539}{\faMobile\ +91-9920616539} $\bullet$
     \href{https://www.linkedin.com/in/richie-thomas/}{\faLinkedin\ richie-thomas} $\bullet$
     \href{https://github.com/richiebthomas}{\faGithub\ richiebthomas} $\bullet$
-    \href{https://richiebthomas.github.io/blog}{\faGlobe\ Blogsite}
+    \href{https://richiebthomas.github.io/blog}{\faGlobe\ Blog}
 \end{center}
 
 \vspace{0.2em}
@@ -96,21 +96,20 @@
 
 \resumeSubheading
 {Bachelor of Engineering - Information Technology}{2022 -- 2026}
-{Fr. C. Rodrigues Institute of Technology}{CGPA: 7.42/10.0}
+{Fr. C. Rodrigues Institute of Technology, Navi Mumbai}{CGPA: 7.42/10.0}
 
 \vspace{0.1em}
 
 %----------------------------------------------------------------------------------------
 %   EXPERIENCE
 %----------------------------------------------------------------------------------------
-\section{Professional Experience}
+\section{Work Experience}
 
 \resumeSubheading
 {Research Intern}{July 2025 -- Present}
-{Indian Institute of Science Education and Research (IISER), Mohali, India}{}
+{Indian Institute of Science Education and Research (IISER) Mohali, India}{}
 \begin{itemize}
-    \resumeItem{Spearheaded hardware-software co-design of a Sparse Neural Network Accelerator on PYNQ-Z2 FPGA for MNIST digit recognition}
-    \resumeItem{Optimized neural architecture achieving 96\% accuracy, enabling real-time edge AI deployment}
+    \resumeItem{Architected a sparse neural network on a PYNQ-Z2 FPGA using Python and Vivado HLS, boosting real-time edge AI performance by eliminating near-zero weights while achieving 96\% model accuracy for MNIST recognition.}
 \end{itemize}
 
 \vspace{0.1em}
@@ -119,9 +118,9 @@
 {Tech Intern}{July 2025 -- July 2025}
 {Sports Mentoring Infusion, Mumbai}{}
 \begin{itemize}
-    \resumeItem{Architected cross-platform React Native application with Node.js backend, reducing load times by 40\% through optimized API design}
-    \resumeItem{Launched gamified habit tracking system that boosted user engagement by 65\% through streak rewards and progress visualization}
-    \resumeItem{Engineered analytics dashboard enabling data-driven coaching decisions for 15+ sports mentors}
+    \resumeItem{Created a comprehensive application for mentors of underprivileged youth, creating a system to monitor habit-building progress and facilitate prompt, data-driven support.}
+    \resumeItem{Launched a gamified habit tracking system that boosted user engagement by 65\% and engineered an analytics dashboard to enable data-driven coaching decisions for 15+ sports mentors.}
+    
 \end{itemize}
 
 \vspace{0.1em}
@@ -130,9 +129,9 @@
 {Android Developer Intern}{June 2025 -- July 2025}
 {GetFly Technologies, Sion}{}
 \begin{itemize}
-    \resumeItem{Delivered campus ERP solution using Flutter, digitizing operations for 1,000+ students and faculty across 8 modules at Vasantdada Patil Pratishthan’s College of Engineering \& Visual Arts (VPPCOEVA)}
-\resumeItem{Established unified project architecture by consolidating individual module codebases from multiple developers into a cohesive, scalable application}
-\resumeItem{Integrated 8+ REST APIs and optimized Dio-based data fetching, reducing sync latency by 40\%}
+    \resumeItem{Delivered a comprehensive campus ERP solution using Flutter for Vasantdada Patil Pratishthan's College of Engineering, digitizing operations for over 1,000 students and faculty across 8 modules.}
+\resumeItem{Established a unified, scalable project architecture by consolidating multiple codebases, integrating 8+ REST APIs, and optimizing data fetching to reduce sync latency by 40\%.}
+
 
 \end{itemize}
 
@@ -142,8 +141,7 @@
 {Full Stack Web Developer Intern}{March 2025 -- June 2025}
 {Bayside Sports India Pvt. Ltd., Bandra}{}
 \begin{itemize}
-    \resumeItem{Built SSR sales portal with React.js/Laravel, reducing initial page load time by 50\% and enhancing crawlability}
-    \resumeItem{Streamlined booking workflow cutting customer onboarding time by 35\% through UI/UX optimization}
+    \resumeItem{Built a Server-Side Rendered (SSR) sales portal using React.js and Laravel, cutting initial page load time by 50\% and enhancing crawlability.}
     \resumeItem{Developed admin dashboard that cut lead qualification time by 40\%, allowing sales reps to tailor outreach based on user booking data}
 \end{itemize}
 
@@ -153,9 +151,8 @@
 {PHP Developer Intern}{March 2024 -- April 2025}  
 {Fr. C. Rodrigues Institute of Technology, Vashi}{}
 \begin{itemize}
-    \resumeItem{Owned campus management system serving 1,000+ users with RBAC}
-    \resumeItem{Automated data exports saving 10+ administrative hours weekly through PDF/Excel modules}
-    \resumeItem{Drove 20\% UX improvement via performance tuning and feature enhancements}
+    \resumeItem{Managed a campus management system with Role-Based Access Control (RBAC) used by over 1,000 students and faculty.}
+    \resumeItem{Engineered key system enhancements, including an automated data export module that saved 10+ administrative hours weekly and performance tuning that drove a 20\% improvement in user experience.}
 \end{itemize}
 
 \vspace{0.1em}
@@ -163,12 +160,12 @@
 %----------------------------------------------------------------------------------------
 %    PROJECTS
 %----------------------------------------------------------------------------------------
-\section{Key Projects}
+\section{Projects}
 
 \resumeProject
 {Investment Platform - MERN Stack}
 {\href{https://github.com/richiebthomas/FinalSubmissionCodeCrafter}{\faGithub\ GitHub}}
-{Built in 24 hours during a hackathon by a 4-member team, this end-to-end trading platform features portfolio management and automated trades. Integrated real-time data streams via WebSockets, increasing data freshness by 5x. Tech stack: MongoDB, Express.js, React.js, Node.js, Chart.js.}
+{Built in 24 hours during a hackathon by a 4-member team, this trading platform features portfolio management and automated trades. Integrated real-time data streams via WebSockets, increasing data freshness by 5x. Tech stack: MongoDB, Express.js, React.js, Node.js}
 
 \resumeProject
 {Learning Management System - Flutter \& Firebase}
@@ -178,14 +175,14 @@
 %----------------------------------------------------------------------------------------
 %    TECHNICAL SKILLS
 %----------------------------------------------------------------------------------------
-\section{Technical Skills}
+\section{Skills}
 \begin{tabular*}{\textwidth}{@{}p{0.25\textwidth}@{\hspace{0.02\textwidth}}p{0.73\textwidth}@{}}
-Languages: & TypeScript, JavaScript (ES6+), Python, Java, Dart, SQL \\[2pt]
-Frontend: & React.js, Flutter, React Native, Material UI, Chart.js \\[2pt]
-Backend: & Node.js, Express, REST/GraphQL, WebSockets, Server-Side Rendering \\[2pt]
-Databases: & PostgreSQL, MongoDB, Firebase, ORM (Mongoose, Eloquent) \\[2pt]
+Languages: & JavaScript, Python, Java, Dart, SQL \\[2pt]
+Frontend: & React.js, Flutter, React Native \\[2pt]
+Backend: & Node.js, Express, REST/GraphQL \\[2pt]
+Databases: & PostgreSQL, MongoDB, Firestore, ORM (Mongoose, Eloquent) \\[2pt]
 DevOps: & AWS, Docker, CI/CD, Git, Firebase, Postman \\[2pt]
-Methodologies: & Agile, TDD, Microservices, Hardware-Software Co-Design \\
+
 \end{tabular*}
 
 % ... (Leadership section remains unchanged) ...
@@ -198,7 +195,7 @@ Methodologies: & Agile, TDD, Microservices, Hardware-Software Co-Design \\
 {Computer Society of India (CSI)}{}
 \begin{itemize}
     \resumeItem{Managed documentation for 10+ technical events with 500+ participants, creating standardized templates and automated certification system in Python}
-    \resumeItem{Improved operational efficiency by 40\% through implementation of document management workflow}
+    
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
