@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[a4,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -41,21 +41,34 @@
   \vspace{-4pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% Ensure that generated pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item[]
+  \begin{minipage}[t]{\linewidth}
+    \leavevmode\llap{\scriptsize\textbullet\hspace{0.5em}}%
+    \small{#1}\vspace{-2pt}
+  \end{minipage}
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.35in, itemsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Resume subheading for Education (old style, two lines)
+\newcommand{\resumeSubheadingEdu}[4]{ % #1=Degree, #2=Period, #3=College, #4=Location
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheading}[4]{ % #1=Position, #2=Period, #3=Company, #4=Location
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \ \textbar \ \textit{\textbf{#3, #4}} & \textbf{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -66,96 +79,94 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
 \begin{center}
     {\Huge \scshape Richie Thomas} \\ \vspace{1pt}
     Mumbai, Maharashtra \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faPhone\ +91-9920616539 ~ \href{mailto:richiebt2004@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{richiebt2004@gmail.com}} ~ 
-    \href{https://linkedin.com/in/richie-thomas}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/richie-thomas}}  ~
-    \href{https://github.com/richiebthomas}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/richiebthomas}}
+    \small \raisebox{-0.1\height}\faPhone\ +91-9920616539 ~ \href{mailto:richiebt2004@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  {richiebt2004@gmail.com}} ~ 
+    \href{https://linkedin.com/in/richie-thomas}{\raisebox{-0.2\height}\faLinkedin\ {linkedin.com/in/richie-thomas}}  ~
+    \href{https://github.com/richiebthomas}{\raisebox{-0.2\height}\faGithub\ {github.com/richiebthomas}}
     \vspace{-8pt}
 \end{center}
 
 %-----------EDUCATION-----------
 \section{EDUCATION}
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \resumeSubheadingEdu
       {Bachelor of Engineering - Information Technology}{2022 -- 2026}
-      {Fr. C. Rodrigues Institute of Technology - CGPA: 7.42/10.0}{Navi Mumbai, India}
+      {Fr. C. Rodrigues Institute of Technology, Vashi}{CGPA: 7.42/10.0 (Sem 6)}
   \resumeSubHeadingListEnd
+\vspace{-5pt}
 
 %-----------EXPERIENCE-----------
-\section{EXPERIENCE}
+\section{WORK EXPERIENCE}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
+  \resumeSubheading
       {Research Intern}{July 2025 -- Present}
-      {Indian Institute of Science Education and Research (IISER) - Remote}{Mohali, India}
+      {IISER}{Mohali}
       \resumeItemListStart
-        \resumeItem{Architected a sparse neural network on a PYNQ-Z2 FPGA using Python and Vivado HLS, boosting real-time edge AI performance by eliminating near-zero weights while achieving 96\% model accuracy for MNIST recognition.}
+        \resumeItem{Architected a sparse neural network on a PYNQ-Z2 FPGA using Python and Vivado HLS, pruning near-zero weights to boost real-time edge AI performance while maintaining 96\% MNIST recognition accuracy.}
+        \resumeItem{Optimized matrix multiplication kernels with Vivado HLS pragmas (loop unrolling, pipelining), reducing latency by \textbf{3.2×} and improving throughput by \textbf{2.7×} compared to baseline FPGA implementation.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Tech Intern}{July 2025}
-      {Sports Mentoring Infusion - Remote}{Mumbai, India}
-      \resumeItemListStart
-        \resumeItem{Developed a comprehensive mentorship application to monitor habit-building progress for underprivileged youth, enabling prompt and data-driven mentor support.}
-        \resumeItem{Launched a gamified habit tracking system that boosted user engagement by 65\% and engineered an analytics dashboard to enable data-driven coaching decisions for 15+ sports mentors.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Android Developer Intern}{June 2025 -- July 2025}
-      {GetFly Technologies - Remote}{Sion, India}
-      \resumeItemListStart
-        \resumeItem{Delivered a comprehensive campus ERP solution using Flutter for VPP College of Engineering, digitizing operations for over 1,000 students and faculty across 8 modules.}
-        \resumeItem{Established a unified, scalable project architecture by consolidating multiple codebases, integrating 8+ REST APIs, and optimizing data fetching to reduce sync latency by 40\%.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Full Stack Web Developer Intern}{March 2025 -- June 2025}
-      {Bayside Sports India Pvt. Ltd. - Remote}{Bandra, India}
+\resumeSubheading
+      {Full Stack Web Developer Intern}{March 2025 -- Sept 2025}
+      {Bayside Sports}{Bandra}
       \resumeItemListStart
         \resumeItem{Built a Server-Side Rendered (SSR) sales portal using React.js and Laravel, cutting initial page load time by 50\% and enhancing crawlability.}
         \resumeItem{Developed admin dashboard that cut lead qualification time by 40\%, allowing sales reps to tailor outreach based on user booking data.}
       \resumeItemListEnd
 
-    \resumeSubheading
+  \resumeSubheading
+      {Android Developer Intern}{June 2025 -- July 2025}
+      {GetFly Technologies}{Sion}
+      \resumeItemListStart
+        \resumeItem{Delivered a comprehensive campus ERP solution using Flutter for VPP College of Engineering, digitizing operations for over 1,000 students and faculty across 8 modules.}
+        \resumeItem{Established a unified, scalable project architecture by consolidating multiple codebases, integrating 8+ REST APIs, and optimizing data fetching to reduce sync latency by 40\%.}
+      \resumeItemListEnd
+
+  
+
+  \resumeSubheading
       {PHP Developer Intern}{March 2024 -- April 2025}
-      {Fr. C. Rodrigues Institute of Technology - Hybrid}{Vashi, India}
+      {FCRIT}{Vashi}
       \resumeItemListStart
         \resumeItem{Enhanced and maintained a campus information management system by implementing new features based on faculty feedback and resolving critical bugs, improving usability for over 1,000 users.}
       \resumeItemListEnd
-    
+
   \resumeSubHeadingListEnd
-\vspace{-16pt}
+\vspace{-5pt}
 
 %-----------PROJECTS-----------
 \section{PROJECTS}
-    \vspace{-5pt}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Investment Platform} $|$ \emph{MERN Stack}}{2024}
-          \resumeItemListStart
-            \resumeItem{Built in 24 hours during a hackathon by a 4-member team, this trading platform features portfolio management and auto trading.}
-            \resumeItem{Engineered a live trading experience by integrating WebSockets for real-time data streaming, enabling instant portfolio updates for users.}
-          \resumeItemListEnd
-          \vspace{-13pt}
-      \resumeProjectHeading
-          {\textbf{Learning Management System} $|$ \emph{Flutter \& Firebase}}{2024}
-          \resumeItemListStart
-            \resumeItem{Developed a virtual classroom platform enabling educators to create private classes, manage student enrollment via unique join codes.}
-            \resumeItem{Engineered a system for assignment submission and tracking, streamlining the workflow between teachers and students.}
-          \resumeItemListEnd 
-    \resumeSubHeadingListEnd
-\vspace{-15pt}
+  \resumeSubHeadingListStart
+
+  
+
+  \resumeSubheading
+      {ChatApp - End-to-End Encrypted Messenger}{2025}
+      {Flutter, Node.js, E2E Encrption}{}
+      \resumeItemListStart
+        \resumeItem{Implemented hybrid encryption combining \textbf{Diffie-Hellman} key exchange (X25519) with \textbf{RSA}-style authentication (Ed25519) for secure session establishment, achieving military-grade encryption comparable to WhatsApp and Signal}
+        \resumeItem{Built Double Ratchet messaging with AES-GCM encryption, achieving perfect forward secrecy and post-compromise security}
+        
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Investment Platform}{2024}
+      {MERN Stack}{}
+      \resumeItemListStart
+        \resumeItem{Built in 24 hours during a hackathon by a 4-member team, this trading platform features portfolio management and auto trading}
+        \resumeItem{Engineered a live trading experience by integrating WebSockets for real-time data streaming, enabling instant portfolio updates for users}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-6pt}
 
 %-----------TECHNICAL SKILLS-----------
 \section{TECHNICAL SKILLS}
@@ -163,22 +174,23 @@
     \small{\item{
      \textbf{Languages}{: JavaScript, Python, Java, Dart, SQL} \\
      \textbf{Frontend}{: React.js, Flutter, React Native} \\
-     \textbf{Backend}{: Node.js, Express, REST, GraphQL} \\
-     \textbf{Databases}{: PostgreSQL, MongoDB, Firestore, ORM (Mongoose, Eloquent)} \\
-     \textbf{DevOps}{: AWS, Docker, CI/CD, Git, Firebase, Postman} \\
+     \textbf{Backend}{: Laravel, Node.js, Express, REST, GraphQL} \\
+     \textbf{Databases}{: PostgreSQL, MongoDB, Firestore, ORM (Prisma, Mongoose, Eloquent)} \\
+     \textbf{DevOps}{: Kubernetes, AWS, Docker, CI/CD, Git, Firebase, Postman} \\
     }}
  \end{itemize}
- \vspace{-16pt}
+ \vspace{-5pt}
 
-%-----------LEADERSHIP---------------
-\section{LEADERSHIP}
-    \resumeSubHeadingListStart
-        \resumeSubheading
-          {Head of Documentation}{July 2024 -- March 2025}
-          {Computer Society of India (CSI) - Hybrid}{}
-          \resumeItemListStart
-            \resumeItem{Managed documentation for 10+ technical events with 500+ participants, creating standardized templates and automated certification system in Python.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+%-----------CO-CURRICULAR---------------
+\section{CO-CURRICULAR AND VOLUNTARY ACTIVITIES}
+  \resumeItemListStart
+    \resumeItem{\textbf{Head of Documentation}, Computer Society of India: Oversaw documentation for \textbf{10+ technical events} with \textbf{500+ participants}; designed standardized templates and built an automated certification system using \textbf{Python}.}
+    \resumeItem{\textbf{Finalist (Top 5)}, HackQuinox 2024 Hackathon, Computer Society of India – FCRIT.}
+    \resumeItem{Advanced through the \textbf{Internal Round}, Smart India Hackathon 2024.}
+    \resumeItem{\textbf{Tech Intern}, Sports Mentoring Infusion: Developed a mentorship platform to track \textbf{habit-building progress} of underprivileged youth, enabling \textbf{data-driven mentor interventions}.}
+    \resumeItem{\textbf{Organizing Committee Member}, ETAMAX 2024 (College Fest).}
+    \resumeItem{\textbf{Top 20\%}, BuildWithIndia Hackathon by Google India.}
+  \resumeItemListEnd
+
 
 \end{document}
