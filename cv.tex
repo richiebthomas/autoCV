@@ -1,209 +1,186 @@
-\documentclass[a4,11pt]{article}
+% /resume.tex
+\documentclass[a4,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{fontawesome5}
-\usepackage{multicol}
 \usepackage{xcolor}
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
-% Define colors
+% Colors
 \definecolor{darkblue}{RGB}{0,51,102}
 \definecolor{mediumblue}{RGB}{0,102,204}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
+% Margins
 \addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
 \addtolength{\textheight}{1.4in}
 
-\urlstyle{same}
-
-\raggedbottom
 \raggedright
+\raggedbottom
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries\color{darkblue}
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{mediumblue}\titlerule \vspace{-5pt}]
 
-% Ensure that generated pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 % Custom commands
-\newcommand{\resumeItem}[1]{
-  \item[]
-  \begin{minipage}[t]{\linewidth}
-    \leavevmode\llap{\color{mediumblue}\scriptsize\textbullet\hspace{0.5em}}%
-    \small{#1}\vspace{-1pt}
-  \end{minipage}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet}
+
+\newcommand{\resumeItem}[1]{\item \small{#1}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.35in, itemsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{\color{darkblue}#1} \textbar\ \textit{#3, #4} & \textbf{\small #2} \\
+  \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.35in, itemsep=2pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
-
-% Resume subheading for Education (improved spacing)
-\newcommand{\resumeSubheadingEdu}[4]{ % #1=Degree, #2=Period, #3=College, #4=Location
-  \vspace{-1pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\color{darkblue}#1} & \textbf{\small\color{darkblue}#2} \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+\newcommand{\resumeProjectHeading}[3]{
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{\color{darkblue}#1} & \textbf{\small #3} \\
+    \textit{\small #2} & \\
+  \end{tabular*}\vspace{-5pt}
 }
 
-% Work experience formatting: Position | Company, Location         Duration
-\newcommand{\resumeSubheading}[4]{ % #1=Position, #2=Period, #3=Company, #4=Location
-  \vspace{-1pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\color{darkblue}#1} \ \textbar \ \textit{\small #3, #4} & \textbf{\small\color{darkblue}#2} \\
-    \end{tabular*}\vspace{-5pt}
+% Compact skills command
+\newcommand{\skillItem}[2]{
+  \textbf{#1:} #2
 }
 
-% Project heading with better formatting
-\newcommand{\resumeProjectHeading}[3]{ % #1=Project Name, #2=Technologies, #3=Date
-    \vspace{-1pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\color{darkblue}#1} & \textbf{\small\color{darkblue}#3} \\
-      \textit{\small #2} & \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-
-% New command for skills with better formatting
-\newcommand{\resumeSkillItem}[2]{
-  \textbf{\color{darkblue}#1}{: #2}
-}
 
 \begin{document}
 
-% HEADER SECTION - Improved with better spacing and color
+% ---------- HEADER ----------
 \begin{center}
-    {\Huge \scshape \color{darkblue}Richie Thomas} \\ 
-    
-    \vspace{6pt}
-    \small 
-    \raisebox{-0.1\height}{\color{mediumblue}\faPhone}\ +91-9920616539 \quad
-    \href{mailto:richiebt2004@gmail.com}{\raisebox{-0.2\height}{\color{mediumblue}\faEnvelope}\ richiebt2004@gmail.com} \quad
-    \href{https://linkedin.com/in/richie-thomas}{\raisebox{-0.2\height}{\color{mediumblue}\faLinkedin}\ linkedin.com/in/richie-thomas} \quad
-    \href{https://github.com/richiebthomas}{\raisebox{-0.2\height}{\color{mediumblue}\faGithub}\ github.com/richiebthomas}
-    \vspace{-6pt}
+  {\Huge \scshape \color{darkblue} Richie Thomas} \\ \vspace{6pt}
+  \small
+  \faPhone\ +91-9920616539 \quad
+  \href{mailto:richiebt2004@gmail.com}{\faEnvelope\ richiebt2004@gmail.com} \quad
+  \href{https://linkedin.com/in/richie-thomas}{\faLinkedin\ linkedin.com/in/richie-thomas} \quad
+  \href{https://github.com/richiebthomas}{\faGithub\ github.com/richiebthomas}
 \end{center}
 
-%-----------EDUCATION-----------
+% ---------- EDUCATION ----------
 \section{EDUCATION}
-  \resumeSubHeadingListStart
-    \resumeSubheadingEdu
-      {Bachelor of Engineering - Information Technology}{2022 -- 2026}
-      {Fr. C. Rodrigues Institute of Technology, Vashi}{CGPA: 7.55/10.0 (Sem 7)}
-  \resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0in, label={}]
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{Bachelor of Engineering — Information Technology} & \textbf{2022 -- 2026} \\
+    Fr. C. Rodrigues Institute of Technology, Navi Mumbai & CGPA: 7.55 / 10 \\
+  \end{tabular*}
+\end{itemize}
 
-%-----------EXPERIENCE-----------
+% ---------- WORK EXPERIENCE ----------
 \section{WORK EXPERIENCE}
-  \resumeSubHeadingListStart
-
-  \resumeSubheading
-      {Research Intern}{July 2025 -- Present}
-      {IISER}{Mohali}
-      \resumeItemListStart
-        \resumeItem{Architected a sparse neural network on a PYNQ-Z2 FPGA using Python and Vivado HLS, pruning near-zero weights to boost real-time edge AI performance while maintaining \textbf{96\% MNIST recognition accuracy}.}
-        \resumeItem{Optimized matrix multiplication kernels with Vivado HLS pragmas (loop unrolling, pipelining), reducing latency by \textbf{3.2×} and improving throughput by \textbf{2.7×} compared to baseline FPGA implementation.}
-      \resumeItemListEnd
-
+\begin{itemize}[leftmargin=0in, label={}]
 
 \resumeSubheading
-      {Full Stack Web Developer Intern}{March 2025 -- Sept 2025}
-      {Bayside Sports}{Bandra}
-      \resumeItemListStart
-        \resumeItem{Built a Server-Side Rendered (SSR) sales portal using React.js and Laravel, cutting initial page load time by \textbf{50\%} and enhancing crawlability.}
-        \resumeItem{Developed admin dashboard that cut lead qualification time by \textbf{40\%}, allowing sales reps to tailor outreach based on user booking data.}
-      \resumeItemListEnd
+  {Research Intern}
+  {Jul 2025 -- Apr 2026}
+  {IISER}
+  {Mohali}
+\resumeItemListStart
+  \resumeItem{Designed a CNN architecture for FPGA deployment on PYNQ-Z2 using Vivado HLS, achieving 98\% MNIST accuracy.}
+  \resumeItem{Optimized the inference pipeline through loop unrolling and pipelining, increasing throughput by 2.7×.}
+  \resumeItem{Implemented hardware–software integration via AXI/DMA protocols and PYNQ overlays for bitstream deployment.}
+\resumeItemListEnd
+
 \resumeSubheading
-      {Backend Developer Intern}{July 2025 -- July 2025}
-      {Sports Mentoring Infusion}{Mumbai}
-      \resumeItemListStart
-        \resumeItem{Architected a scalable educational management platform using Node.js, Express, and PostgreSQL, supporting multi-role authentication for \textbf{500+ students, coaches, and administrators} with JWT-based security.}
-        \resumeItem{Developed comprehensive REST API with 12+ interconnected database tables, implementing gamified learning features including points system, badges, and real-time progress tracking, reducing manual administrative tasks by \textbf{60\%}.}
-      \resumeItemListEnd
+  {Full Stack Web Developer Intern}
+  {Mar 2025 -- Sept 2025}
+  {Bayside Sports}
+  {Bandra}
+\resumeItemListStart
+  \resumeItem{Built a sales and lead-management portal enabling structured enquiry submission and boosting lead qualification efficiency by 70\%.}
+  \resumeItem{Implemented advanced filtering, search capabilities, and admin dashboards to improve lead visibility and tracking.}
+  \resumeItem{Architected 4+ database schemas for lead and enquiry management; deployed on Laravel Cloud and Linux shared hosting.}
+\resumeItemListEnd
+
+\resumeSubheading
+  {Android Developer Intern}
+  {Jun 2025 -- Jul 2025}
+  {GetFly Technologies}
+  {Sion}
+\resumeItemListStart
+  \resumeItem{Engineered a campus ERP mobile application using Flutter with REST API integration for authentication and report generation, serving 1,000+ students and faculty across 8 modules.}
+  \resumeItem{Standardized a unified, scalable project architecture by consolidating multiple codebases, integrating 8+ REST APIs, and optimizing data fetching to reduce sync latency by 40\%.}
+\resumeItemListEnd
+
+\resumeSubheading
+  {PHP Developer Intern}
+  {Mar 2024 -- Apr 2025}
+  {FCRIT}
+  {Vashi}
+\resumeItemListStart
+  \resumeItem{Extended the internal campus information system by creating 10+ forms, dashboards, and administrative tools based on faculty requirements.}
+  \resumeItem{Oversaw feature enhancements, bug resolution, and deployment of new modules, improving usability for 1,000+ users.}
+\resumeItemListEnd
+
+\end{itemize}
 
 
-  \resumeSubheading
-      {Android Developer Intern}{June 2025 -- July 2025}
-      {GetFly Technologies}{Sion}
-      \resumeItemListStart
-        \resumeItem{Delivered a comprehensive campus ERP solution using Flutter for VPP College of Engineering, digitizing operations for over \textbf{1,000 students and faculty} across 8 modules.}
-        \resumeItem{Established a unified, scalable project architecture by consolidating multiple codebases, integrating 8+ REST APIs, and optimizing data fetching to reduce sync latency by \textbf{40\%}.}
-      \resumeItemListEnd
-
-  \resumeSubheading
-      {PHP Developer Intern}{March 2024 -- April 2025}
-      {FCRIT}{Vashi}
-      \resumeItemListStart
-        \resumeItem{Enhanced and maintained a campus information management system by implementing new features based on faculty feedback and resolving critical bugs, improving usability for over \textbf{1,000 users}.}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------
+% ---------- PROJECTS ----------
 \section{PROJECTS}
-  \resumeSubHeadingListStart
+\begin{itemize}[leftmargin=0in, label={}]
 
-  \resumeProjectHeading
-      {ChatApp - End-to-End Encrypted Messenger}{Flutter, Node.js, E2E Encryption}{2025}
-      \resumeItemListStart
-        \resumeItem{Implemented hybrid encryption combining \textbf{Diffie-Hellman} key exchange (X25519) with \textbf{RSA}-style authentication (Ed25519) for secure session establishment, achieving military-grade encryption comparable to WhatsApp and Signal.}
-        \resumeItem{Built Double Ratchet messaging with AES-GCM encryption, achieving perfect forward secrecy and post-compromise security.}
-      \resumeItemListEnd
+\resumeProjectHeading
+  {RBTkaFiles — File Sharing Platform}
+  {PHP, MySQL, Supabase S3, Firebase, Linux}
+  {2025}
+\resumeItemListStart
+  \resumeItem{Built file sharing platform with 5,600+ visits featuring large file upload handling and network resilience safeguards.}
+  \resumeItem{Integrated Supabase S3 for asset storage and Firebase for real-time sync, overcoming shared hosting limitations.}
+  \resumeItem{Implemented security measures including file type validation, size limits, and input sanitization.}
+  \resumeItem{Integrated student marks portal, loading marks details 3x faster than official college website}
+\resumeItemListEnd
 
-    \resumeProjectHeading
-      {SMI - Behavior Management Platform}{React Native, Node.js, PostgreSQL}{2025}
-      \resumeItemListStart
-        \resumeItem{Built a comprehensive cross-platform educational management system using React Native (Expo) and Node.js, serving multiple user roles with real-time data synchronization.}
-        \resumeItem{Designed and implemented PostgreSQL database with 12+ interconnected tables using UUID primary keys, integrated speech-to-text capabilities, and developed gamified learning features with points system and progress tracking analytics.}
-      \resumeItemListEnd
+\resumeProjectHeading
+  {SMI — Behavior Management Platform}
+  {React Native, Node.js, PostgreSQL}
+  {2025}
+\resumeItemListStart
+  \resumeItem{Developed cross-platform educational management system with real-time synchronization supporting multiple user roles.}
+  \resumeItem{Designed PostgreSQL database with 12+ interconnected tables; implemented speech-to-text and gamified learning workflows.}
+\resumeItemListEnd
 
-  \resumeSubHeadingListEnd
+\end{itemize}
 
-%-----------TECHNICAL SKILLS-----------
+% ---------- SKILLS ----------
 \section{TECHNICAL SKILLS}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \resumeSkillItem{Languages}{JavaScript, Python, Java, Dart, SQL} \\[2pt]
-     \resumeSkillItem{Frontend}{React.js, Flutter, React Native} \\[2pt]
-     \resumeSkillItem{Backend}{Laravel, Node.js, Express, REST, GraphQL} \\[2pt]
-     \resumeSkillItem{Databases}{PostgreSQL, MongoDB, Firestore, ORM (Prisma, Mongoose, Eloquent)} \\[2pt]
-     \resumeSkillItem{DevOps}{Kubernetes, AWS, Docker, CI/CD, Git, Firebase, Postman} \\
-    }}
- \end{itemize}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]
+\small{
+  \item \skillItem{Languages}{JavaScript, Python, Java, SQL}
+  \item \skillItem{Frontend}{HTML, CSS, React.js, React Native}
+  \item \skillItem{Backend}{Node.js, Express, Laravel, PHP, Flask}
+  \item \skillItem{Databases}{PostgreSQL, MySQL, MongoDB, Firestore}
+  \item \skillItem{DevOps \& Tools}{Docker, AWS, Kubernetes, Git, CI/CD, Firebase, Postman}
+}
+\end{itemize}
 
-%-----------CO-CURRICULAR---------------
-\section{CO-CURRICULAR AND VOLUNTARY ACTIVITIES}
-  \resumeItemListStart
-    \resumeItem{\textbf{Head of Documentation}, Computer Society of India: Oversaw documentation for \textbf{10+ technical events} with \textbf{500+ participants}; designed standardized templates and built an automated certification system using Python.}
-    \resumeItem{\textbf{Finalist (Top 5)}, HackQuinox 2024 Hackathon, Computer Society of India – FCRIT.}
-    \resumeItem{Advanced through the \textbf{Internal Round}, Smart India Hackathon 2024.}
-    \resumeItem{\textbf{Organizing Committee Member}, ETAMAX 2024 (College Fest).}
-    \resumeItem{\textbf{Top 20\%}, BuildWithIndia Hackathon by Google India.}
-  \resumeItemListEnd
+% ---------- ACTIVITIES ----------
+\section{CO-CURRICULAR AND ACTIVITIES}
+\resumeItemListStart
+  \resumeItem{Head of Documentation, Computer Society of India (FCRIT, Vashi) — Led documentation for 10+ technical events with 500+ participants; built automated certification system using Python.}
+  \resumeItem{Finalist (Top 5), HackQuinox 2024 Hackathon — CSI FCRIT.}
+  \resumeItem{Top 20\%, BuildWithIndia Hackathon by Google India.}
+\resumeItemListEnd
 
 \end{document}
